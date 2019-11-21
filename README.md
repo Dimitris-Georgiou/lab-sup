@@ -61,6 +61,4 @@ Question 2:
 
 
 PS: If i get access to the server i will change my answers before the deadline tomorrow
-My ssh key:
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0XVRwnpVPb1sXAmf7ZQcLcZlSSC5viMlfMiOnr4Np5DBXSBXv1siBjQcVOOofYDmZC6Ge1PTA4vK7TB7prctXjLfNHwPEAiVlkIgFopqdCCEblqLehuvzWVtwR04Gz2UbeiKH5Q+t0d/2ZGfGFMUiHNA7toSlpoKSQmr3L8zV5oLKbsygSGfxT2FbgszU/Bp/QrDQJdoFkVOI+kPOxyulGl/7xZ4csaqQ/2RGfaZI1UrhHRs5B01igGwKVdEbEJxKUEfUOpZqvHCwv/JJ2Bb2yCWtrlBS6cYZmlMc+GfNgoaKH3efjo0m6UpJxQvQsqnUqRiNA3s+uCE9b5UQvdMZ dimitris.georgiou94@gmail.com
