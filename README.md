@@ -28,3 +28,37 @@ The method of submission is part of the test (usage of Git)
 - Make sure you list in detail what are the steps you followed to identify and resolve the problem.
 
 Hint: The platform runs on nginx and python
+
+## Answers
+
+'''I send my ssh key, I tried to ssh to the server but at the moment I do not have permission to connect. So the below answers are imaginary scenarios'''
+
+Question 1:
+1. First I will inform him that we are checking his request.
+2. I will try to access the platform myself to check if everything its okay.
+3. If I can access the platform, I will ask customer the following questions:
+	a. To confirm that he has internet connection and from what device he is trying to access.
+	b. If he has access to the internet I will ask which broswer is he using and what version, and to try to connect with a different browser.  
+	c. If the issue persists  I will ask him to check if he has any  firewall that might blocking the connection.
+	d. If he checks and confirm that it is not a firewall issue, I will escalate the issue, and I will inform him as soon as I have a response.
+4. If i do not have access to the platform, I will check if the server is up
+5. If the server is up i will connect and check if the service is running.
+6. If the service is running i will escalate the issue. If the service is not running, I will start the service and check if I can access the platform.
+7. If everything is okay from my side. I will ask customer to confirm that he can connect to the platform.
+
+Question 2:
+1. First I will inform him that we are checking his request.
+2. I will try to access the platform myself to check if everything its okay. 
+3. If I can access the platform, I will ask customer the following questions:
+        a. To confirm that he has internet connection and from what device he is trying to access.
+        b. If he has access to the internet I will ask which broswer is he using and what version, and to try to connect with a different browser.
+        c. If the issue persists  I will ask him to check if he has any  firewall that might blocking the connection.
+        d. If he checks and confirm that it is not a firewall issue, I will escalate the issue, and I will inform him as soon as I have a response.
+4. If I cannot reach the platform, I will first check if the port 444 on the server is open.
+5. If the port is closed I will open the port and I will try to connect - If its okay i will ask him to check again now.
+6. 4. If i do not have access to the platform, I will check if the server is up
+7. In case that the port is open and the service is running and I still can not access the platform I will escalate the issue, and I will inform customer about it. I will also inform him that as soon as I have a response I will get back to him.
+
+
+PS: If i get access to the server i will change my answers before the deadline tomorrow
+i
