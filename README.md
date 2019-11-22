@@ -31,36 +31,48 @@ Hint: The platform runs on nginx and python
 
 ## Answers
 
-'''I send my ssh key, I tried to ssh to the server but at the moment I do not have permission to connect. So the below answers are imaginary scenarios'''
+
 
 Question 1:
-1. First I will inform him that we are checking his request.
-2. I will try to access the platform myself to check if everything its okay.
-3. If I can access the platform, I will ask customer the following questions:
-	a. To confirm that he has internet connection and from what device he is trying to access. 
-	b. If he has access to the internet I will ask which browser is he using and what version, and to try to connect with a different browser.  
-	c. If the issue persists  I will ask him to check if he has any  firewall that might blocking the connection.
-	d. If he checks and confirms that it is not a firewall issue, I will escalate the issue, and I will inform him as soon as I have a response.
-4. If i do not have access to the platform, I will check if the server is up.
-5. If the server is up i will connect and check if the service is running.
-6. If the service is running i will escalate the issue. If the service is not running, I will start the service and check if I can access the platform.
-7. If everything is okay from my side. I will ask customer to confirm that he can connect to the platform.
+1. First, the customer will be informed that we are dealing with his request.
+2. I will access the server to see if the service is running.
+3. I will check which ports ar open using: netsat -tnlp
+4. Only the ports 443 and 22 are open in public. Customer is trying to access the platform with port 80.
+5. Then i will check at etc/nginx/sites-enabled , to check if the service is running. 
+6. the service is running on 443: 
+server {
+  listen 443  default_server;
+  location /test1 {
+        proxy_pass http://localhost:5000/test1;
+  }
+
+  root /var/www/html;
+}
+7. I will make an http request using curl to 45.33.22.50:443/test1 to check if the service is running. The service is running.
+8. Then I will inform customer that the service is running on the port 443, so he has to connect to http://45.33.22.50:443/test1
+9. The final step is to ask customer to confirm that the platform is reachable, and state that we remain at his disposal for further assistance.
+
 
 Question 2:
-1. First I will inform him that we are checking his request.
-2. I will ask customer to tell me if he can see an error code or a blank page.
-3. I will try to access the platform myself to check if everything its okay. 
+1. First, I will inform customer that we are checking his request.
+2. I will access the server to see if the service is running.
+3. I will check which ports ar open using: netsat -tnlp
+4. Only the ports 443 and 22 are open in public. Customer is trying to access the platform with port 444.
+5. Then i will check at etc/nginx/sites-enabled. The file is not located at sites-enabled, it is located at etc/nginx/sites-available. So the service is not configured in nginx.
+6. the file on sites-available :
+server {
+  listen 444 default_server;
+  location /test2 {
+        proxy_pass http://localhost:5000/test2;
+  }
 
-4. If I can access the platform, I will ask customer the following questions:
-        a. To confirm that he has internet connection and from what device he is trying to access.
-        b. If he has access to the internet I will ask which browser is he using and what version, and to try to connect with a different browser.
-        c. If the issue persists  I will ask him to check if he has any  firewall that might blocking the connection.
-        d. If he checks and confirm that it is not a firewall issue, I will escalate the issue, and I will inform him as soon as I have a response.
-5. If I cannot reach the platform, I will first check if the port 444 on the server is open.
-6. If the port is closed I will open the port and I will try to connect - If its okay i will ask him to check again now.
-7. 4. If i do not have access to the platform, I will check if the server is up.
-8. In case that the port is open and the service is running and I still can not access the platform I will escalate the issue, and I will inform customer about it. I will also inform him that as soon as I have a response I will get back to him.
+  root /var/www/html;
+}
+7. I will curl 45.33.22.50:444/test2 but there is no access. On localhost:5000/test2 there is access because the service locally runs at 5000.
+8. At this point I will inform customer that the issue has been detected and that I will escalate it to the administrators to fix the issue and I will get back as soon as possible.
+9. Then I will inform admins to configure the service to nginx and enable the port 444.
+10. As soon as I have a response that the issue has been resolved. I will curl to 45.33.22.50:444/test2 to confirm it.
+11. Finally I will ask customer to recheck now and to confirm that the platform is accessible. 
 
 
-PS: If i get access to the server i will change my answers before the deadline tomorrow
 
